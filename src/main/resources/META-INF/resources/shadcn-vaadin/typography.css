@@ -1,0 +1,71 @@
+/* shadcn typography scale, at the 14px base Aura uses. */
+
+body {
+  font-family: var(--shadcn-font-sans);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--shadcn-foreground);
+  background: var(--shadcn-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+a {
+  color: var(--shadcn-foreground);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+code {
+  font-family: var(--shadcn-font-mono);
+  font-size: 0.875em;
+  font-weight: 600;
+  background: var(--shadcn-muted);
+  border-radius: var(--vaadin-radius-s);
+  padding: 0.2rem 0.3rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--shadcn-border);
+}
+
+.shadcn-muted {
+  color: var(--shadcn-muted-foreground);
+}

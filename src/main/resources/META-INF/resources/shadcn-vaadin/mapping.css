@@ -1,0 +1,50 @@
+/*
+ * Maps the --shadcn-* tokens onto the properties Vaadin's base styles and Aura
+ * read. Component files only need these when a component has a property of its own.
+ */
+
+html {
+  /* Aura computes text, border and surface colours from its background colour; keep it in sync. */
+  --aura-background-color-light: var(--shadcn-background-light);
+  --aura-background-color-dark: var(--shadcn-background-dark);
+  --aura-app-background: var(--shadcn-background);
+
+  /* Primary buttons, selection, checked states. shadcn's primary is near-black / near-white, not a hue. */
+  --aura-accent-color-light: var(--shadcn-primary-light);
+  --aura-accent-color-dark: var(--shadcn-primary-dark);
+  --aura-accent-contrast-color-light: var(--shadcn-primary-foreground-light);
+  --aura-accent-contrast-color-dark: var(--shadcn-primary-foreground-dark);
+  --aura-red: var(--shadcn-destructive);
+
+  --aura-font-family: var(--shadcn-font-sans);
+  --aura-base-font-size: 14;
+  --aura-base-line-height: 1.43;
+
+  --aura-shadow-xs: var(--shadcn-shadow-xs);
+  --aura-shadow-s: var(--shadcn-shadow-sm);
+  --aura-shadow-m: var(--shadcn-shadow-md);
+
+  /* shadcn popovers are opaque with a hairline border; Aura's default is translucent and blurred. */
+  --aura-overlay-shadow: var(--shadcn-shadow-md);
+  --aura-overlay-surface-opacity: 1;
+  --aura-overlay-backdrop-filter: none;
+  --aura-overlay-outline-color: var(--shadcn-border);
+  --aura-overlay-inner-outline-color: transparent;
+
+  --vaadin-text-color: var(--shadcn-foreground);
+  --vaadin-text-color-secondary: var(--shadcn-muted-foreground);
+  --vaadin-text-color-disabled: color-mix(in oklab, var(--shadcn-foreground) 50%, transparent);
+  --vaadin-border-color: var(--shadcn-border);
+  --vaadin-border-color-secondary: var(--shadcn-border);
+  --vaadin-background-color: var(--shadcn-background);
+  --vaadin-background-container: var(--shadcn-secondary);
+  --vaadin-background-container-strong: var(--shadcn-accent);
+
+  /* shadcn: sm = radius - 4px, md = radius - 2px, lg = radius. */
+  --vaadin-radius-s: calc(var(--shadcn-radius) - 4px);
+  --vaadin-radius-m: calc(var(--shadcn-radius) - 2px);
+  --vaadin-radius-l: var(--shadcn-radius);
+
+  --vaadin-focus-ring-width: 3px;
+  --vaadin-focus-ring-color: var(--shadcn-ring-translucent);
+}

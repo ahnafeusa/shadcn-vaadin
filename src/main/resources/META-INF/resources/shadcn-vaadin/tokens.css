@@ -1,0 +1,94 @@
+/*
+ * shadcn/ui design tokens ("neutral" base colour, MIT, see THIRD-PARTY-NOTICES.md).
+ *
+ * Override the -light / -dark pairs on `html` to re-theme. The unsuffixed
+ * properties resolve through light-dark() and follow the `color-scheme` of the
+ * element, which is how Aura and Flow's Page.setColorScheme() switch modes.
+ */
+
+html {
+  --shadcn-radius: 0.625rem;
+
+  --shadcn-font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --shadcn-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --shadcn-background-light: oklch(1 0 0);
+  --shadcn-background-dark: oklch(0.145 0 0);
+  --shadcn-foreground-light: oklch(0.145 0 0);
+  --shadcn-foreground-dark: oklch(0.985 0 0);
+
+  --shadcn-card-light: oklch(1 0 0);
+  --shadcn-card-dark: oklch(0.205 0 0);
+  --shadcn-card-foreground-light: oklch(0.145 0 0);
+  --shadcn-card-foreground-dark: oklch(0.985 0 0);
+
+  --shadcn-popover-light: oklch(1 0 0);
+  --shadcn-popover-dark: oklch(0.205 0 0);
+  --shadcn-popover-foreground-light: oklch(0.145 0 0);
+  --shadcn-popover-foreground-dark: oklch(0.985 0 0);
+
+  --shadcn-primary-light: oklch(0.205 0 0);
+  --shadcn-primary-dark: oklch(0.922 0 0);
+  --shadcn-primary-foreground-light: oklch(0.985 0 0);
+  --shadcn-primary-foreground-dark: oklch(0.205 0 0);
+
+  --shadcn-secondary-light: oklch(0.97 0 0);
+  --shadcn-secondary-dark: oklch(0.269 0 0);
+  --shadcn-secondary-foreground-light: oklch(0.205 0 0);
+  --shadcn-secondary-foreground-dark: oklch(0.985 0 0);
+
+  --shadcn-muted-light: oklch(0.97 0 0);
+  --shadcn-muted-dark: oklch(0.269 0 0);
+  --shadcn-muted-foreground-light: oklch(0.556 0 0);
+  --shadcn-muted-foreground-dark: oklch(0.708 0 0);
+
+  --shadcn-accent-light: oklch(0.97 0 0);
+  --shadcn-accent-dark: oklch(0.269 0 0);
+  --shadcn-accent-foreground-light: oklch(0.205 0 0);
+  --shadcn-accent-foreground-dark: oklch(0.985 0 0);
+
+  --shadcn-destructive-light: oklch(0.577 0.245 27.325);
+  --shadcn-destructive-dark: oklch(0.704 0.191 22.216);
+
+  --shadcn-border-light: oklch(0.922 0 0);
+  --shadcn-border-dark: oklch(1 0 0 / 10%);
+  --shadcn-input-light: oklch(0.922 0 0);
+  --shadcn-input-dark: oklch(1 0 0 / 15%);
+  --shadcn-ring-light: oklch(0.708 0 0);
+  --shadcn-ring-dark: oklch(0.556 0 0);
+
+  --shadcn-background: light-dark(var(--shadcn-background-light), var(--shadcn-background-dark));
+  --shadcn-foreground: light-dark(var(--shadcn-foreground-light), var(--shadcn-foreground-dark));
+  --shadcn-card: light-dark(var(--shadcn-card-light), var(--shadcn-card-dark));
+  --shadcn-card-foreground: light-dark(var(--shadcn-card-foreground-light), var(--shadcn-card-foreground-dark));
+  --shadcn-popover: light-dark(var(--shadcn-popover-light), var(--shadcn-popover-dark));
+  --shadcn-popover-foreground: light-dark(var(--shadcn-popover-foreground-light), var(--shadcn-popover-foreground-dark));
+  --shadcn-primary: light-dark(var(--shadcn-primary-light), var(--shadcn-primary-dark));
+  --shadcn-primary-foreground: light-dark(var(--shadcn-primary-foreground-light), var(--shadcn-primary-foreground-dark));
+  --shadcn-secondary: light-dark(var(--shadcn-secondary-light), var(--shadcn-secondary-dark));
+  --shadcn-secondary-foreground: light-dark(var(--shadcn-secondary-foreground-light), var(--shadcn-secondary-foreground-dark));
+  --shadcn-muted: light-dark(var(--shadcn-muted-light), var(--shadcn-muted-dark));
+  --shadcn-muted-foreground: light-dark(var(--shadcn-muted-foreground-light), var(--shadcn-muted-foreground-dark));
+  --shadcn-accent: light-dark(var(--shadcn-accent-light), var(--shadcn-accent-dark));
+  --shadcn-accent-foreground: light-dark(var(--shadcn-accent-foreground-light), var(--shadcn-accent-foreground-dark));
+  --shadcn-destructive: light-dark(var(--shadcn-destructive-light), var(--shadcn-destructive-dark));
+  --shadcn-border: light-dark(var(--shadcn-border-light), var(--shadcn-border-dark));
+  --shadcn-input: light-dark(var(--shadcn-input-light), var(--shadcn-input-dark));
+  --shadcn-ring: light-dark(var(--shadcn-ring-light), var(--shadcn-ring-dark));
+
+  /* shadcn's "outline" surfaces: transparent in light mode, a faint white wash in dark mode (bg-input/30). */
+  --shadcn-input-surface: light-dark(transparent, color-mix(in oklab, var(--shadcn-input-dark) 30%, transparent));
+  --shadcn-input-surface-hover: light-dark(var(--shadcn-accent-light), color-mix(in oklab, var(--shadcn-input-dark) 50%, transparent));
+
+  --shadcn-ring-translucent: color-mix(in oklab, var(--shadcn-ring) 50%, transparent);
+
+  --shadcn-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadcn-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadcn-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadcn-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* The class convention shadcn projects use; Aura's own switch is the color-scheme property. */
+html.dark {
+  color-scheme: dark;
+}

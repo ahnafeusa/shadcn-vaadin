@@ -1,0 +1,33 @@
+/* shadcn Dialog; popovers, menus and notifications take their look from the Aura overlay properties in mapping.css. */
+
+html {
+  --vaadin-dialog-background: var(--shadcn-background);
+  --vaadin-dialog-border-color: var(--shadcn-border);
+  --vaadin-dialog-border-width: 1px;
+  --vaadin-dialog-border-radius: var(--vaadin-radius-l);
+  --vaadin-dialog-shadow: var(--shadcn-shadow-lg);
+  --vaadin-dialog-padding: 1.5rem;
+  --vaadin-dialog-max-width: 32rem;
+  --vaadin-dialog-title-color: var(--shadcn-foreground);
+  --vaadin-dialog-title-font-size: 1.125rem;
+  --vaadin-dialog-title-font-weight: 600;
+  --vaadin-dialog-title-line-height: 1.75rem;
+  --vaadin-overlay-backdrop-background: rgb(0 0 0 / 0.5);
+}
+
+vaadin-notification-card::part(overlay) {
+  background: var(--shadcn-popover);
+  color: var(--shadcn-popover-foreground);
+  border: 1px solid var(--shadcn-border);
+  border-radius: var(--vaadin-radius-l);
+  box-shadow: var(--shadcn-shadow-lg);
+  font-size: 0.875rem;
+}
+
+vaadin-tooltip-overlay::part(overlay) {
+  background: var(--shadcn-primary);
+  color: var(--shadcn-primary-foreground);
+  border-radius: var(--vaadin-radius-m);
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}

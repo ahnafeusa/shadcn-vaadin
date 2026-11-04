@@ -1,0 +1,22 @@
+/* shadcn Card: bordered, rounded-xl, shadow-sm, padded. */
+
+vaadin-card {
+  background: var(--shadcn-card);
+  color: var(--shadcn-card-foreground);
+  border: 1px solid var(--shadcn-border);
+  border-radius: calc(var(--shadcn-radius) + 4px);
+  box-shadow: var(--shadcn-shadow-sm);
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+vaadin-card::part(title) {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+vaadin-card::part(subtitle) {
+  color: var(--shadcn-muted-foreground);
+  font-size: 0.875rem;
+}

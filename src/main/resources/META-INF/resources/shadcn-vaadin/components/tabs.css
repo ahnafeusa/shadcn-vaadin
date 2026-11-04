@@ -1,0 +1,50 @@
+/* shadcn Tabs: a muted pill bar; the selected tab is a raised white pill instead of an underline. */
+
+html {
+  --vaadin-tabs-background: var(--shadcn-muted);
+  --vaadin-tabs-border-width: 0px;
+  --vaadin-tabs-border-radius: var(--vaadin-radius-l);
+  --vaadin-tabs-padding: 3px;
+  --vaadin-tabs-gap: 0px;
+
+  --vaadin-tab-background: transparent;
+  --vaadin-tab-border-width: 0px;
+  --vaadin-tab-border-radius: var(--vaadin-radius-m);
+  --vaadin-tab-font-size: 0.875rem;
+  --vaadin-tab-font-weight: 500;
+  --vaadin-tab-line-height: 1.25rem;
+  --vaadin-tab-padding: 0.25rem 0.5rem;
+  --vaadin-tab-gap: 0.375rem;
+  --vaadin-tab-text-color: var(--shadcn-muted-foreground);
+
+  --vaadin-tabsheet-border-width: 0px;
+  --vaadin-tabsheet-padding: 1rem 0;
+}
+
+vaadin-tabs:not([orientation="vertical"]) {
+  width: fit-content;
+  max-width: 100%;
+  flex: 0 0 auto;
+}
+
+vaadin-tabsheet::part(tabs-container) {
+  justify-content: flex-start;
+}
+
+vaadin-tab {
+  transition: background-color 150ms, color 150ms, box-shadow 150ms;
+}
+
+vaadin-tab::before {
+  display: none;
+}
+
+vaadin-tab:hover {
+  --vaadin-tab-text-color: var(--shadcn-foreground);
+}
+
+vaadin-tab[selected] {
+  --vaadin-tab-background: var(--shadcn-background);
+  --vaadin-tab-text-color: var(--shadcn-foreground);
+  box-shadow: var(--shadcn-shadow-sm);
+}

@@ -1,0 +1,15 @@
+/* shadcn-vaadin master stylesheet. Load with @StyleSheet(ShadcnTheme.STYLESHEET). */
+
+@import '../aura/aura.css';
+
+@import 'tokens.css';
+@import 'mapping.css';
+@import 'typography.css';
+
+@import 'components/button.css';
+@import 'components/input-field.css';
+@import 'components/checkbox-radio.css';
+@import 'components/grid.css';
+@import 'components/overlay.css';
+@import 'components/tabs.css';
+@import 'components/card.css';

@@ -1,0 +1,55 @@
+/* shadcn Checkbox and RadioGroup: 16px, hairline border, primary fill / primary dot when checked. */
+
+html {
+  --vaadin-checkbox-size: 1rem;
+  --vaadin-checkbox-border-width: 1px;
+  --vaadin-checkbox-border-radius: 4px;
+  --vaadin-checkbox-border-color: var(--shadcn-input);
+  --vaadin-checkbox-background: var(--shadcn-input-surface);
+  --vaadin-checkbox-marker-color: var(--shadcn-primary-foreground);
+  --vaadin-checkbox-gap: 0.5rem;
+  --vaadin-checkbox-label-color: var(--shadcn-foreground);
+  --vaadin-checkbox-label-font-size: 0.875rem;
+  --vaadin-checkbox-label-font-weight: 500;
+  --vaadin-checkbox-label-line-height: 1.25rem;
+
+  --vaadin-radio-button-size: 1rem;
+  --vaadin-radio-button-border-width: 1px;
+  --vaadin-radio-button-border-color: var(--shadcn-input);
+  --vaadin-radio-button-background: var(--shadcn-input-surface);
+  --vaadin-radio-button-marker-color: var(--shadcn-primary);
+  --vaadin-radio-button-marker-size: 0.5rem;
+  --vaadin-radio-button-gap: 0.5rem;
+  --vaadin-radio-button-label-color: var(--shadcn-foreground);
+  --vaadin-radio-button-label-font-size: 0.875rem;
+  --vaadin-radio-button-label-font-weight: 500;
+  --vaadin-radio-button-label-line-height: 1.25rem;
+}
+
+vaadin-checkbox::part(checkbox),
+vaadin-radio-button::part(radio) {
+  box-shadow: var(--shadcn-shadow-xs);
+  transition: background-color 150ms, border-color 150ms, box-shadow 150ms;
+}
+
+vaadin-checkbox[checked],
+vaadin-checkbox[indeterminate] {
+  --vaadin-checkbox-background: var(--shadcn-primary);
+  --vaadin-checkbox-border-color: var(--shadcn-primary);
+}
+
+vaadin-radio-button[checked] {
+  --vaadin-radio-button-background: var(--shadcn-input-surface);
+  --vaadin-radio-button-border-color: var(--shadcn-primary);
+}
+
+vaadin-checkbox[focus-ring]::part(checkbox),
+vaadin-radio-button[focus-ring]::part(radio) {
+  --vaadin-checkbox-border-color: var(--shadcn-ring);
+  --vaadin-radio-button-border-color: var(--shadcn-ring);
+}
+
+vaadin-checkbox[disabled],
+vaadin-radio-button[disabled] {
+  opacity: 0.5;
+}

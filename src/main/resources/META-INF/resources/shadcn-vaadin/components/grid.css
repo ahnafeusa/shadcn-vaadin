@@ -1,0 +1,26 @@
+/* shadcn Table: muted header text, hairline row borders, hover wash, "rounded-md border" wrapper. */
+
+html {
+  --vaadin-grid-background: var(--shadcn-background);
+  --vaadin-grid-border-width: 1px;
+  --vaadin-grid-border-color: var(--shadcn-border);
+  --vaadin-grid-border-radius: var(--vaadin-radius-m);
+  --vaadin-grid-row-border-width: 1px;
+  --vaadin-grid-column-border-width: 0px;
+  --vaadin-grid-header-font-size: 0.875rem;
+  --vaadin-grid-header-font-weight: 500;
+  --vaadin-grid-header-text-color: var(--shadcn-muted-foreground);
+  --vaadin-grid-row-hover-background-color: color-mix(in oklab, var(--shadcn-muted) 50%, transparent);
+  --vaadin-grid-row-selected-background-color: var(--shadcn-muted);
+  --vaadin-grid-row-odd-background-color: color-mix(in oklab, var(--shadcn-muted) 50%, transparent);
+  --vaadin-grid-cell-padding: 0.625rem 0.75rem;
+  --vaadin-grid-column-resize-handle-color: var(--shadcn-border);
+}
+
+vaadin-grid {
+  font-size: 0.875rem;
+}
+
+vaadin-grid-sorter[direction] {
+  color: var(--shadcn-foreground);
+}
