@@ -105,6 +105,24 @@ The demo app lives in `src/test` so it never ships in the JAR.
 ./mvnw clean install -Pdirectory   # also builds target/shadcn-vaadin-<version>.zip for vaadin.com/directory
 ```
 
+### Screenshot tests
+
+`screenshot-tests/` is a small Playwright project that renders the demo and compares it pixel-for-pixel
+against baselines in `screenshot-tests/tests/demo.spec.ts-snapshots/`. CI runs it on every push, so a
+Vaadin update or a CSS change that shifts anything shows up as a failing job with a diff report attached.
+
+```bash
+cd screenshot-tests
+npm ci && npx playwright install chromium
+npm test              # starts the demo itself if nothing is on :8080
+npm run update        # rewrite the baselines after an intended change
+```
+
+Only the Linux baselines are committed, because text rendering differs per OS. Running locally on
+Windows or macOS writes separate `-win32`/`-darwin` baselines that are gitignored. To refresh the
+committed baselines after an intended visual change, run the CI workflow manually with
+*update-snapshots* ticked, download the `screenshot-baselines` artifact and commit its contents.
+
 Layout:
 
 ```
@@ -116,6 +134,7 @@ src/main/resources/META-INF/resources/shadcn-vaadin/
   typography.css    body, headings, links, code
   components/       one file per component that needs properties of its own
 src/test/java/.../demo/                                    the kitchen-sink demo
+screenshot-tests/                                          Playwright visual regression tests
 ```
 
 ## License
