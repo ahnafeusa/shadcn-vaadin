@@ -8,7 +8,9 @@ async function openDemo(page: Page) {
   await grid.locator('vaadin-grid-cell-content', { hasText: 'INV-0006' }).waitFor();
   // Vite's dependency optimiser can force a reload shortly after the first visit; let it settle.
   await page.waitForLoadState('networkidle');
-  await page.addStyleTag({ content: 'vaadin-dev-tools { display: none !important; }' });
+  // Dev-mode tooling: the dev tools layer, and Copilot's toolbar plus its "running in development
+  // mode" notification, which otherwise sits on top of the header's Toggle theme button.
+  await page.addStyleTag({ content: 'vaadin-dev-tools, copilot-main { display: none !important; }' });
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(500);
 }
