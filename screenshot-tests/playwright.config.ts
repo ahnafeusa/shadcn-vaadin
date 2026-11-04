@@ -8,7 +8,9 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: false,
   workers: 1,
-  retries: 0,
+  retries: process.env.CI ? 1 : 0,
+  // Dev-mode page loads on a cold CI runner can take well over the 30s default.
+  timeout: 120_000,
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : [['list']],
   expect: {
     toHaveScreenshot: {

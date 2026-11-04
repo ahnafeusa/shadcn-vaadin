@@ -48,7 +48,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npx playwright test ${{ inputs.update-snapshots == true && '--update-snapshots' || '' }}
       - uses: actions/upload-artifact@v4
-        if: ${{ inputs.update-snapshots == true }}
+        if: ${{ always() && inputs.update-snapshots == true }}
         with:
           name: screenshot-baselines
           path: screenshot-tests/tests/**/*-snapshots/*-linux.png

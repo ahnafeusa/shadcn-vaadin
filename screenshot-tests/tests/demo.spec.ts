@@ -6,6 +6,8 @@ async function openDemo(page: Page) {
   // The first request after start compiles the dev bundle, which can take a while.
   await grid.waitFor({ timeout: 180_000 });
   await grid.locator('vaadin-grid-cell-content', { hasText: 'INV-0006' }).waitFor();
+  // Vite's dependency optimiser can force a reload shortly after the first visit; let it settle.
+  await page.waitForLoadState('networkidle');
   await page.addStyleTag({ content: 'vaadin-dev-tools { display: none !important; }' });
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(500);
